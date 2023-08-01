@@ -46,23 +46,27 @@ body {
     position: relative;
     top: 4.3%;
 }
-.containertitletext, .containertitletext2 {
+.containertitletext, .containertitletext2, .contactheader {
     position: relative;
-
-    border-bottom-style: solid;
+    border-bottom: 2px solid;
     width: 75%;
     left: 12.5%;
     font-size: 24pt;
     font-weight: 600;
 }
-.containertitletext2 
-{
-    position: relative;
-    text-align:center;
-    left:0%;
-    font-size: 24pt;
-    font-weight: 600;
-}
+
+    .contactheader 
+    {
+        border-bottom: none;
+    }
+
+    .containertitletext2 {
+        position: relative;
+        text-align: center;
+        left: 0%;
+        font-size: 24pt;
+        font-weight: 600;
+    }
 
     h2 {
         position: relative;
@@ -78,9 +82,13 @@ h3 {
 }
 .abouttext2 {
     font-weight: 900;
-    font-size: 25pt;
+    font-size: 22pt;
 }
 
+p
+{
+    font-size:20pt;
+}
 
 .AboutUsContainer {
     position: relative;
@@ -196,6 +204,7 @@ h3 {
 .inner-container, .inner-container2 {
     width: 50%; /* Adjust this value to control the width of each inner container */
     padding: 20px;
+    font-size:20pt;
 }
 
 .inner-container2 {
@@ -225,7 +234,7 @@ h3 {
 }
 
 .col-sm {
-    background-color: rgb(255, 255, 255, 0.75); /* Transparent White (75% opacity) */
+    background-color: rgb(255, 255, 255, 0.90); /* Transparent White (75% opacity) */
     color: black;
     font-weight: 800;
 }
@@ -252,101 +261,131 @@ label
   width:100%;        
 }
 
-
-
+.nav-icon
+{
+    position:relative;
+    left:65%;
+}
 /* responsive ------------------------------------------------- */
+@media (max-width: 1024px) 
 
-
-
-@media (max-width: 768px) {
-    html {
-        font-size: 15pt;
-    }
-
-    .inner-container {
-        width: 50%;
-        font-size: 15pt;
-    }
-
-    .abouttext2 {
-        font-size: 15pt;
+{
+    .nav-icon {
+        left: 60%;
     }
 }
 
-@media (max-width: 425px) {
+    @media (max-width: 768px) {
+        html {
+            font-size: 15pt;
+        }
 
-    .abouttext2 {
-        font-size: 14pt;
-    }
+        .nav-icon {
+            left: 0%;
+        }
 
-    .containertitletext {
-        font-size: 15pt;
-    }
+        p {
+            font-size: 18pt;
+        }
 
-    .containertitletext2 {
-        font-size: 15pt;
-    }
+        .inner-container {
+            width: 50%;
+            font-size: 15pt;
+        }
 
-    .inner-container {
-        font-size: 10pt;
-    }
-
-    .inner-container2 {
-        width: 40%;
-    }
-
-    .col-sm {
-        flex: 1 0 0%;
-        font-size: 12pt;
+        .abouttext2, .contactheader {
+            font-size: 15pt;
+        }
     }
 
-    
+    @media (max-width: 425px) {
 
-    .Contact {
-        font-size: 12pt;
-    }
+        .abouttext2, .contactheader {
+            font-size: 12pt;
+            padding-bottom: 10px;
+        }
 
-    .underline {
-        left: 20%;
-        width: 60%;
-        border-bottom: solid
-    }
-
-    .navtext {
-        display: inline-flex;
-        font-size: 10pt;
-    }
-    .titlecontainer {
-        font-size: 12pt;
-        letter-spacing:4px;
-    }
-}
+        .containertitletext, .containertitletext2 {
+            font-size: 15pt;
+        }
 
 
-@media (max-width: 375px) {
-    .navtext {
-        font-size: 8pt;
-    }
-    .titlecontainer {
-        font-size: 12pt;
-        letter-spacing: 2px;
-    }
-    .abouttext2 {
-        font-size: 10pt;
-    }
-    .inner-container {
-        font-size: 8pt;
+        p {
+            font-size: 12pt;
+        }
+
+        .inner-container {
+            font-size: 10pt;
+        }
+
+        .inner-container2 {
+            width: 40%;
+        }
+
+        .col-sm {
+            flex: 1 0 0%;
+            font-size: 12pt;
+        }
+
+
+
+        .Contact {
+            font-size: 12pt;
+        }
+
+        .navtext {
+            display: inline-flex;
+            font-size: 10pt;
+        }
+
+        .titlecontainer {
+            font-size: 14pt;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 10pt;
+        }
     }
 
-    .col-sm {
-        font-size: 8pt;
-        left: 5%;
+    @media (max-width: 375px) {
+        .navtext {
+            font-size: 8pt;
+        }
+
+        .titlecontainer {
+            font-size: 12pt;
+            letter-spacing: 2px;
+        }
+
+        .abouttext2 {
+            font-size: 10pt;
+        }
+
+        .inner-container {
+            font-size: 8pt;
+        }
+
+        .col-sm {
+            font-size: 8pt;
+            left: 5%;
+        }
+
+        #message, #Fullname, #email {
+            font-size: 11pt;
+        }
     }
 
-    #message, #Fullname, #email {
-        font-size: 11pt;
+
+    @media (max-width: 320px) {
+        h5 {
+            hyphens: auto;
+        }
+        .navtext {
+            font-size: 7pt;
+        }
     }
-}
 
     
 
