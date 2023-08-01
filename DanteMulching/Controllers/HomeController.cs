@@ -49,7 +49,7 @@ namespace DanteMulching.Controllers
             smtpClient.Host = "jacobrivera7271996@gmail.com";
             smtpClient.EnableSsl = true;
             smtpClient.UseDefaultCredentials = false;
-            smtpClient.Credentials = new NetworkCredential("jacobrivera7271996@gmail.com", "mqxfddiphnwlykhf");
+            smtpClient.Credentials = new NetworkCredential("jacobrivera7271996@gmail.com", "");
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtpClient.Send(message);
             return true;
