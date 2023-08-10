@@ -11,9 +11,28 @@ namespace DanteMulching.Controllers
 {
     public class HomeController : Controller
     {
+        public bool SendMail(string name, string email, string message1)
+        {
+            MailMessage message = new MailMessage();
+            SmtpClient smtpClient = new SmtpClient();
+            message.From = new MailAddress("jacobrivera7271996@gmail.com");
+            message.To.Add("jacobrivera7271996@gmail.com");
+            message.Subject = "Test email";
+            message.IsBodyHtml = true;
+            message.Body = "<p>Name: " + name + "</p>" + "<p>Email: " + email + "</p>" + "<p>Message: " + message1 + "</p>";
+
+            smtpClient.Port = 587;
+            smtpClient.Host = "jacobrivera7271996@gmail.com";
+            smtpClient.EnableSsl = true;
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = new NetworkCredential("jacobrivera7271996@gmail.com", "");
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.Send(message);
+            return true;
+        }
+
         
 
-      
 
         private readonly ILogger<HomeController> _logger;
 
@@ -35,25 +54,7 @@ namespace DanteMulching.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public bool SendMail(string name, string email, string message1)
-        {
-            MailMessage message = new MailMessage();
-            SmtpClient smtpClient = new SmtpClient();
-            message.From = new MailAddress("jacobrivera7271996@gmail.com");
-            message.To.Add("jacobrivera7271996@gmail.com");
-            message.Subject = "Test email";
-            message.IsBodyHtml = true;
-            message.Body = "<p>Name: " + name + "</p>" + "<p>Email: " + email + "</p>" + "<p>Message: " + message1 + "</p>";
-
-            smtpClient.Port = 587;
-            smtpClient.Host = "jacobrivera7271996@gmail.com";
-            smtpClient.EnableSsl = true;
-            smtpClient.UseDefaultCredentials = false;
-            smtpClient.Credentials = new NetworkCredential("jacobrivera7271996@gmail.com", "");
-            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtpClient.Send(message);
-            return true;
-        }
+        
 
         
     }

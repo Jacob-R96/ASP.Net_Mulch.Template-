@@ -266,7 +266,9 @@ label
     position:relative;
     left:65%;
 }
+
 /* responsive ------------------------------------------------- */
+
 @media (max-width: 1024px) 
 
 {
